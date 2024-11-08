@@ -45,7 +45,7 @@ class SMPModel(pl.LightningModule):
         self.calc_score = args.calc_score
         self.checkpoint_dir = args.checkpoint_dir
 
-        self.num_inp_ch = 49 # 39
+        self.num_inp_ch = 10 # 39
 
         # normalization values for T and S
         self.mu = torch.tensor([0.12647585, 0.12525924, 0.12395189, 0.12230065, 0.12088306, 0.11962758,

@@ -175,6 +175,11 @@ class HADARMultipleScenes():
         # print("Shape of S_mu = ", np.shape(self.S_mu))
         self.S_std = np.reshape(self.S_std, (-1, 1, 1))[4:53]
 
+        index = [5, 10, 20, 30, 34, 35, 36, 37, 43, 46]
+        index = [i-4 for i in index]
+        self.S_mu = self.S_mu[index]
+        self.S_std = self.S_std[index]
+        
         if fold == 5:
             index = [5, 10, 20, 30, 34, 35, 36, 37, 43, 46]
             index = [i-4 for i in index]

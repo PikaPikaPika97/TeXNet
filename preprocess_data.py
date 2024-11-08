@@ -109,7 +109,7 @@ for subfolder in SUBFOLDERS:
     for j in range(10):
         img = torch.tensor(np.asarray(scio.loadmat(S_files[j])["S"]))
         img = torch.permute(img, (2, 0, 1))
-        img = torch.reshape(img, (1, 54, 1080, 1920))
+        img = torch.reshape(img, (1, 54, 800, 1000))
         [b, c, h, w] = img.shape
         quadratic_split = F.avg_pool2d(img, (h//2, w))
         mean = quadratic_split.numpy()
